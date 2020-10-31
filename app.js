@@ -44,9 +44,11 @@ const init = () => {
                 break;
             case 'Intern':
                 // intern prompts
+                promptIntern(name, id, email);
                 break;
             case 'Manager':
                 //manager prompts
+                promptManager(name, id, email);
                 break;
         }
     })
