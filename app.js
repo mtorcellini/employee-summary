@@ -25,6 +25,7 @@ const init = () => {
         switch (emp) {
             case 'Engineer':
                 // engineer prompts
+                promptEngineer()
                 break;
             case 'Intern':
                 // intern prompts
@@ -36,7 +37,18 @@ const init = () => {
     })
 }
 // and to create objects for each team member (using the correct classes as blueprints!)
+function promptEngineer(name, id, email) {
+    inquirer.prompt([
+        {
+            message : 'Enter GitHub username: ',
+            name : 'username'
+        }
+    ]).then( res => {
+        let username = res.username;
+        let engEmp = new Engineer(name, id, email, username);
 
+    })
+}
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
