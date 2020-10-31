@@ -78,6 +78,18 @@ function promptIntern(name, id, email) {
     })
 }
 
+function promptManager(name, id, email) {
+    inquirer.prompt([
+        {
+            message : 'Enter office phone number: ',
+            name : 'phone'
+        }
+    ]).then( res => {
+        let phone = res.phone;
+        let manEmp = new Manager(name, id, email, phone);
+        // put manager somewhere
+    })
+}
 
 init();
 
