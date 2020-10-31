@@ -20,9 +20,21 @@ const init = () => {
             type : 'list',
             choices : ['Engineer', 'Intern', 'Manager'],
             name : 'role'
+        },
+        {
+            message : 'Employee name: ',
+            name : 'name'
+        },
+        {
+            message : 'Employee email address',
+            name : 'email'
+        },
+        {
+            message : 'Employee IDnum: ',
+            name : 'id'
         }
     ]).then(emp => {
-        switch (emp) {
+        switch (emp.role) {
             case 'Engineer':
                 // engineer prompts
                 break;
