@@ -46,7 +46,7 @@ function promptEngineer(name, id, email) {
     ]).then( res => {
         let username = res.username;
         let engEmp = new Engineer(name, id, email, username);
-
+        // put engineer somehwere
     })
 }
 // After the user has input all employees desired, call the `render` function (required
