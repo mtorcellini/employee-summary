@@ -34,6 +34,9 @@ const init = () => {
             name : 'id'
         }
     ]).then(emp => {
+        let name = emp.name;
+        let email = emp.email;
+        let id = emp.id;
         switch (emp.role) {
             case 'Engineer':
                 // engineer prompts
