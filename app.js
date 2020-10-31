@@ -63,6 +63,19 @@ function promptEngineer(name, id, email) {
         let engEmp = new Engineer(name, id, email, username);
         // put engineer somehwere
     })
+};
+
+function promptIntern(name, id, email) {
+    inquirer.prompt([
+        {
+            message : 'School: ',
+            name : 'school'
+        }
+    ]).then( res => {
+        let school = res.school;
+        let schEmp = new Intern(name, id, email, school);
+        // put intern somewhere
+    })
 }
 
 
