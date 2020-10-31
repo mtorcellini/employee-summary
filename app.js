@@ -26,7 +26,7 @@ const init = () => {
             name : 'name'
         },
         {
-            message : 'Employee email address',
+            message : 'Employee email address: ',
             name : 'email'
         },
         {
@@ -40,7 +40,7 @@ const init = () => {
         switch (emp.role) {
             case 'Engineer':
                 // engineer prompts
-                promptEngineer()
+                promptEngineer(name, id, email);
                 break;
             case 'Intern':
                 // intern prompts
@@ -64,6 +64,10 @@ function promptEngineer(name, id, email) {
         // put engineer somehwere
     })
 }
+
+
+init();
+
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
