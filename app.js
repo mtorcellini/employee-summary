@@ -54,7 +54,7 @@ const init = () => {
                 break;
         }
     })
-}
+};
 // and to create objects for each team member (using the correct classes as blueprints!)
 function promptEngineer(name, id, email) {
     inquirer.prompt([
@@ -84,7 +84,7 @@ function promptIntern(name, id, email) {
         employees.push(schEmp);
         promptForEmp();
     })
-}
+};
 
 function promptManager(name, id, email) {
     inquirer.prompt([
@@ -99,7 +99,7 @@ function promptManager(name, id, email) {
         employees.push(manEmp);
         promptForEmp();
     })
-}
+};
 
 function promptForEmp() {
     inquirer.prompt([{
@@ -110,9 +110,18 @@ function promptForEmp() {
     }]).then( res => {
         if (res.addAnother) {
             init();
+        } else {
+            renderEmployees();
         }
     })
-}
+};
+
+function renderEmployees() {
+    let html = render(employees);
+    fs.writeFile(outputPath, html, (err) => {
+        if (err) throw err;
+    });
+};
 
 init();
 
