@@ -105,7 +105,7 @@ function promptForEmp() {
     inquirer.prompt([{
         message : 'Would you like to add another employee?',
         name : 'addAnother',
-        type : 'confirm'
+        type : 'confirm',
         default : false
     }]).then( res => {
         if (res.addAnother) {
