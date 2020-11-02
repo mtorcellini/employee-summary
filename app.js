@@ -10,6 +10,8 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const employees = [];
+
 
 // Write code to use inquirer to gather information about the development team members,
 
@@ -64,6 +66,8 @@ function promptEngineer(name, id, email) {
         let username = res.username;
         let engEmp = new Engineer(name, id, email, username);
         // put engineer somehwere
+        employees.push(engEmp);
+        promptForEmp();
     })
 };
 
@@ -77,6 +81,8 @@ function promptIntern(name, id, email) {
         let school = res.school;
         let schEmp = new Intern(name, id, email, school);
         // put intern somewhere
+        employees.push(schEmp);
+        promptForEmp();
     })
 }
 
@@ -90,6 +96,21 @@ function promptManager(name, id, email) {
         let phone = res.phone;
         let manEmp = new Manager(name, id, email, phone);
         // put manager somewhere
+        employees.push(manEmp);
+        promptForEmp();
+    })
+}
+
+function promptForEmp() {
+    inquirer.prompt([{
+        message : 'Would you like to add another employee?',
+        name : 'addAnother',
+        type : 'confirm'
+        default : false
+    }]).then( res => {
+        if (res.addAnother) {
+            init();
+        }
     })
 }
 
