@@ -1,0 +1,44 @@
+
+.team-heading {
+    background: #280000;
+    color: #FDFFFF;
+}
+
+.team-area {
+    flex-wrap: wrap;
+}
+
+.employee-card {
+    margin: 1rem auto;
+    width: 90%;
+}
+
+.card-header {
+    background: #570000;
+    color: #FDFFFF;
+}
+
+.card-body {
+    background: #DE7C5A;
+}
+
+.list-group-item {
+    background: #DE7C5A;
+    color: #FDFFFF;
+}
+
+.list-group-item a {
+    color: #B10F2E;
+}
+
+@media (min-width: 768px) {
+    .employee-card {
+        width: 45%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .employee-card {
+        width: 32%;
+    }
+}
